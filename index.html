@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+
+    <!--<link rel="stylesheet" href="assets/css/reset.css">-->
+    <link rel="stylesheet" href="assets/css/cards.css">
+</head>
+<body>
+
+    <div id="deck_cards"></div>
+    
+    <script src="app/controllers/GameController.js"></script>
+    <script src="app/models/Cards.js"></script>
+    <script src="app/views/View.js"></script>
+    <script src="app/views/DeckCardsView.js"></script>
+    <script src="app/helpers/CardShuffle.js"></script>
+    <script>
+        let gameController = new GameController();
+    </script>
+</body>
+</html>

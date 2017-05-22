@@ -1,11 +1,16 @@
 .cards li {
     display: inline-block;
     padding: 5px;
+    
 
 }
 
+ul li a:after {
+    position: absolute;
+}
+
 .card {
-    width: 100px;
+    width: 60px;
     border: 1px solid #000;
     border-radius: 5px;
 }

@@ -10,13 +10,18 @@
     <link rel="stylesheet" href="assets/css/cards.css">
 </head>
 <body>
-
+    <button id="btn_deal"></button>
+    <div id="table_cards"></div>
     <div id="deck_cards"></div>
+    
+
     
     <script src="app/controllers/GameController.js"></script>
     <script src="app/models/Cards.js"></script>
     <script src="app/views/View.js"></script>
     <script src="app/views/DeckCardsView.js"></script>
+    <script src="app/views/TableCardsView.js"></script>
+    <script src="app/views/TurnView.js"></script>
     <script src="app/helpers/CardShuffle.js"></script>
     <script>
         let gameController = new GameController();

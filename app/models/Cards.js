@@ -4,7 +4,7 @@ class Cards {
 
         this._clubs = [
             {
-                value : [2]
+                value : 2
                 ,suit : 'Club'
                 ,image: 'assets/images/cards/2_of_clubs'
             }

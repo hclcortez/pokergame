@@ -5,7 +5,7 @@ class GameController {
         this._$ = document.querySelector.bind(document);
 
         this._turns = ['Hand','Flop','Turn','River'];
-        this._turn = 0;
+
         this._tableCards = [];
 
         this._cards = new Cards();
@@ -15,7 +15,7 @@ class GameController {
         this._turnView       = new TurnView(this._$('#btn_deal'));
 
         this._deckcards = CardShuffle.shuffled(this._cards.deckOfCards);
-        this._deckcardsView.update(this._deckcards);
+        //this._deckcardsView.update(this._deckcards);
         this._turnView.update('Deal Cards');
         this.watch();
         this.dealCards();
@@ -27,6 +27,17 @@ class GameController {
     }
 
     watch(){
+        this._$('#flush').addEventListener('click', () =>{
+            this._deckcardsView.update(Poker.flush(CardShuffle.shuffled(this._cards.deckOfCards)));
+        });
+
+        this._$('#pair').addEventListener('click', () =>{
+            this._deckcardsView.update(Poker.pair(CardShuffle.shuffled(this._cards.deckOfCards)));
+        });
+
+        this._$('#four_of_kind').addEventListener('click', () =>{
+            this._deckcardsView.update(Poker.fourOfKind(CardShuffle.shuffled(this._cards.deckOfCards)));
+        });
         this._$('#btn_deal').addEventListener('click',() => {
             switch(this._turns.shift()){
                 case 'Hand':
@@ -64,7 +75,7 @@ class GameController {
                 default:
                     console.log('Show town is on the table');
             }
-            this._deckcardsView.update(this._deckcards);
+            //this._deckcardsView.update(this._deckcards);
         });
     }
 }
